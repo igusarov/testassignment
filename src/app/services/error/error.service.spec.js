@@ -8,7 +8,7 @@
     beforeEach(module('app'));
 
     beforeEach(inject(function (_errorService_, _toastr_) {
-      spyOn(_toastr_, 'error').and.callThrough();
+      spyOn(_toastr_, 'error');
 
       errorService = _errorService_;
       toastr = _toastr_;

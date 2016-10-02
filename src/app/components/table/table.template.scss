@@ -1,6 +1,7 @@
 .table-component {
   table {
     table-layout: fixed;
+    margin: 0;
   }
 
   th {
@@ -49,7 +50,6 @@
   .centered-elem-wrap {
     line-height: 300px;
     text-align: center;
-    margin-top: -20px;
   }
 
   .pointer {

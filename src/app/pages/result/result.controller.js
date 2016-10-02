@@ -23,7 +23,7 @@
 
     stackoverflowQuestionsService.search($stateParams.q).then(function (items) {
       vm.mainViewTable.items = items;
-    }).finally(function(){
+    }).finally(function () {
       vm.mainViewTable.showSpinner = false;
     });
 

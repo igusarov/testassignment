@@ -1,13 +1,18 @@
 <div class="table-component">
   <table class="table table-bordered">
     <tr>
-      <th class="pointer author" ng-click="$ctrl.sortBy('author.name')">Author
+      <th class="author pointer" ng-click="$ctrl.sortBy('author.name')">Author
         <span class="glyphicon"
               ng-class="{'glyphicon-sort' : $ctrl.propertyName !== 'author.name',
                          'glyphicon-sort-by-attributes-alt' : $ctrl.reverse && $ctrl.propertyName === 'author.name',
                          'glyphicon-sort-by-attributes' : !$ctrl.reverse && $ctrl.propertyName === 'author.name'}"></span>
       </th>
-      <th class="questions">Question</th>
+      <th class="questions pointer" ng-click="$ctrl.sortBy('answer_count')">Question
+        <span class="glyphicon"
+              ng-class="{'glyphicon-sort' : $ctrl.propertyName !== 'answer_count',
+                         'glyphicon-sort-by-attributes-alt' : $ctrl.reverse && $ctrl.propertyName === 'answer_count',
+                         'glyphicon-sort-by-attributes' : !$ctrl.reverse && $ctrl.propertyName === 'answer_count'}"></span>
+      </th>
       <th class="tag pointer" ng-click="$ctrl.sortBy('tag')">Tag
         <span class="glyphicon"
               ng-class="{'glyphicon-sort' : $ctrl.propertyName !== 'tag',
