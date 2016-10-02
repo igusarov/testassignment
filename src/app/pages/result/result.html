@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row result-page-wrap">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <table-component
+          items="result.mainViewTable.items"
+          show-spinner="result.mainViewTable.showSpinner"
+          on-author-click="result.onAuthorClick(authorId)"
+          on-question-click="result.onQuestionClick(questionId)"
+          on-tag-click="result.onTagClick(tag)"></table-component>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div ng-if="result.showQuickViewTable" class="panel panel-default">
+        <table-component
+          items="result.quickViewTable.items"
+          show-spinner="result.quickViewTable.showSpinner"
+          on-question-click="result.onQuestionClick(questionId)"></table-component>
+      </div>
+    </div>
+  </div>
+</div>

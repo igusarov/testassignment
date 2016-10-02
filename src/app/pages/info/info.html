@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="info-page-wrap">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="panel panel-primary">
+          <div class="panel-heading" ng-bind-html="info.question.question.title"></div>
+          <div class="panel-body" ng-bind-html="info.question.question.body">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-9">
+        <ul class="list-unstyled">
+          <li class="panel panel-default" ng-repeat="answer in info.answers">
+            <div class="panel-body" ng-bind-html="answer.answer.body">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

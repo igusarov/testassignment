@@ -1,0 +1,44 @@
+<div class="table-component">
+  <table class="table table-bordered">
+    <tr>
+      <th class="pointer author" ng-click="$ctrl.sortBy('author.name')">Author
+        <span class="glyphicon"
+              ng-class="{'glyphicon-sort' : $ctrl.propertyName !== 'author.name',
+                         'glyphicon-sort-by-attributes-alt' : $ctrl.reverse && $ctrl.propertyName === 'author.name',
+                         'glyphicon-sort-by-attributes' : !$ctrl.reverse && $ctrl.propertyName === 'author.name'}"></span>
+      </th>
+      <th class="questions">Question</th>
+      <th class="tag pointer" ng-click="$ctrl.sortBy('tag')">Tag
+        <span class="glyphicon"
+              ng-class="{'glyphicon-sort' : $ctrl.propertyName !== 'tag',
+                         'glyphicon-sort-by-attributes-alt' : $ctrl.reverse && $ctrl.propertyName === 'tag',
+                         'glyphicon-sort-by-attributes' : !$ctrl.reverse && $ctrl.propertyName === 'tag'}"></span>
+      </th>
+    </tr>
+    <tr ng-hide="$ctrl.showSpinner" ng-repeat="item in $ctrl.items | orderBy:$ctrl.propertyName:$ctrl.reverse">
+      <td><span ng-click="$ctrl.onAuthorClick({authorId : item.author.id})">{{item.author.name}}</span></td>
+      <td>
+        <span class="badge questions-count">{{item.answer_count}}</span>
+        <div ng-click="$ctrl.onQuestionClick({questionId : item.question.id})" ng-bind-html="item.question.title">
+        </div>
+      </td>
+      <td>
+        <span ng-repeat="tag in item.tags" ng-click="$ctrl.onTagClick({tag : tag})">
+          {{tag}}{{$last || item.tags.length < 2? '' :  ', '}}
+        </span>
+      </td>
+    </tr>
+  </table>
+
+  <div ng-if="!$ctrl.items.length && !$ctrl.showSpinner" class="centered-elem-wrap">
+      No data
+  </div>
+
+  <div ng-if="$ctrl.showSpinner" class="centered-elem-wrap">
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+  </div>
+</div>
