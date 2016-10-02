@@ -125,6 +125,7 @@
             body: item.body ? $sce.trustAsHtml(item.body) : null
           },
           answer_count: item.answer_count,
+          tag: item.tags[0],
           tags: item.tags
         };
       });
